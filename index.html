@@ -2,827 +2,1114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Web & API Pentester Links | Ebooks, Tools, Mentorship | Zishan Ahamed Thandar</title>
-
-  <!-- Viewport -->
+  <title>Zishan | Red Teamer & Bug Hunter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Primary SEO -->
+  
+  <!-- SEO Meta Tags -->
   <meta name="author" content="Zishan Ahamed Thandar">
-  <meta name="description" content="Curated cybersecurity resources by Offensive Security Expert & Web/API Penetration Tester Zishan Ahamed Thandar — ebooks, study notes, mentorship, tools, portfolio, and bug bounty profiles.">
-  <meta name="keywords" content="web application penetration testing, API security, bug bounty hunter, ethical hacker, cybersecurity mentor, red team, security tools, ebooks, study notes, Zishan Ahamed Thandar">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Cybersecurity Links Hub | Zishan Ahamed Thandar">
-  <meta property="og:description" content="Access ebooks, checklists, red team notes, mentorship, security tools, portfolio and bug bounty profiles by Zishan Ahamed Thandar.">
+  <meta name="description" content="Red Teamer · Bug Hunter · Security Expert | Premium Pentesting Resources, Tools & Consulting">
+  <meta name="keywords" content="red team, bug bounty, web penetration testing, API security, cybersecurity expert, OSCP notes">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Zishan | Red Teamer & Bug Hunter">
+  <meta property="og:description" content="Premium security resources, pentesting tools, and professional security consulting">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://zishanadthandar.github.io/img/social/htbIcon.png">
-
-  <!-- Twitter -->
+  <meta property="og:image" content="https://zishanhack.com/assets/og-image.jpg">
+  <meta property="og:url" content="https://zishanhack.com">
+  
+  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cybersecurity Links Hub | Zishan Ahamed Thandar">
-  <meta name="twitter:description" content="Ebooks, tools, mentorship and portfolio of Web & API Penetration Tester Zishan Ahamed Thandar.">
-  <meta name="twitter:image" content="https://zishanadthandar.github.io/img/social/htbIcon.png">
+  <meta name="twitter:title" content="Zishan | Red Teamer & Bug Hunter">
+  <meta name="twitter:description" content="Premium cybersecurity resources and professional penetration testing services">
+  <meta name="twitter:image" content="https://zishanhack.com/assets/twitter-card.jpg">
   <meta name="twitter:site" content="@zishanadthandar">
-
-  <!-- Favicon (same as portfolio) -->
-  <link rel="icon" href="data:image/png;base64,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" type="image/x-icon" />
-
-  <!-- Fonts & Frameworks -->
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔴</text></svg>">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-
-  <!-- Schema.org (Person) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Zishan Ahamed Thandar",
-    "jobTitle": "Offensive Security Expert & Web/API Penetration Tester",
-    "url": "https://zishanadthandar.github.io/",
-    "sameAs": [
-      "https://github.com/ZishanAdThandar",
-      "https://twitter.com/zishanadthandar",
-      "https://www.linkedin.com/in/zishanadthandar/",
-      "https://hackerone.com/ZishanAdThandar",
-      "https://app.hackthebox.com/profile/4477",
-      "https://tryhackme.com/p/ZishanAdThandar"
-    ]
-  }
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
   <style>
     :root {
-      --bg-main: #050814;
-      --bg-card: rgba(11, 17, 40, 0.96);
-      --accent: #00ff88;
-      --accent-soft: rgba(0, 255, 136, 0.2);
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.25);
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
-      --radius-lg: 18px;
-      --radius-full: 999px;
+      /* Clean Professional Color Palette */
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111827;
+      --bg-card: #1f2937;
+      --accent-primary: #3b82f6;
+      --accent-secondary: #10b981;
+      --accent-warning: #f59e0b;
+      --accent-purple: #8b5cf6;
+      --accent-telegram: #0088cc;
+      --accent-discord: #5865f2;
+      --accent-whatsapp: #25d366;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #94a3af;
+      --border-light: #374151;
+      --border-dark: #1f2937;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      --shadow-xl: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+      --radius-full: 9999px;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
     }
 
-    #particles-js {
+    /* Background Gradient */
+    body::before {
+      content: '';
       position: fixed;
-      inset: 0;
-      z-index: -1;
-      opacity: 0.28;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
       pointer-events: none;
+      z-index: -1;
     }
 
+    /* Main Container */
     .container {
-      max-width: 640px;
-      padding: 1.5rem 1.25rem 2.5rem;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
-    /* HEADER */
-    .header-section {
-      padding: 4.5rem 0 1.5rem;
+    /* Header */
+    .header {
       text-align: center;
-      position: relative;
+      margin-bottom: 2.5rem;
+      padding-top: 2rem;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
-    .profile-container {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 1.5rem;
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--accent-primary);
+      font-size: 1.2rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .profile-img {
-      width: 120px;
-      height: 120px;
+    .scroll-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
       border-radius: 50%;
-      border: 2px solid rgba(148, 163, 184, 0.6);
-      background: radial-gradient(circle at top left, rgba(0, 255, 136, 0.16), transparent 65%),
-                  radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.15), transparent 55%),
-                  #020617;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent);
-      font-size: 2.3rem;
-      position: relative;
-      overflow: hidden;
+      margin: 0 auto 1.5rem;
+      box-shadow: var(--shadow-xl);
+      border: 3px solid rgba(255, 255, 255, 0.1);
     }
 
-    .online-indicator {
-      position: absolute;
-      bottom: 8px;
-      right: 8px;
-      width: 16px;
-      height: 16px;
-      background-color: var(--accent);
-      border-radius: 50%;
-      border: 2px solid #020617;
-      box-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+    .profile-image i {
+      font-size: 2.5rem;
+      color: white;
     }
 
-    .hero-name {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: 1.6rem;
-      margin-bottom: 0.4rem;
-      text-transform: uppercase;
-      color: var(--accent);
+    h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .tagline {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      margin-bottom: 1.2rem;
-    }
-
-    .specialty-tags {
+    /* Role Badges */
+    .role-badges {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-bottom: 0.5rem;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
     }
 
-    .specialty-tag {
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--accent);
-      padding: 0.25rem 0.8rem;
+    .role-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-primary);
+      padding: 0.5rem 1rem;
       border-radius: var(--radius-full);
-      border: 1px solid var(--accent-soft);
-      font-size: 0.78rem;
-    }
-    .discount-badge {
-      display: inline-block;
-      padding: 0.22rem 0.6rem;
-      font-size: 0.72rem;
+      font-size: 0.85rem;
       font-weight: 500;
-      border-radius: 999px;
-      border: 1px solid rgba(248, 113, 113, 0.8);
-      background: radial-gradient(circle at 0 0, rgba(248, 113, 113, 0.18), rgba(15, 23, 42, 0.9));
-      color: #fecaca;
-      margin-bottom: 0.35rem;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .role-badge i {
+      font-size: 0.8rem;
+    }
+
+    /* Credibility Badges */
+    .credibility-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .credibility-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid;
+    }
+
+    .badge-experience {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--accent-warning);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .badge-trusted {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent-secondary);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-premium {
+      background: rgba(139, 92, 246, 0.1);
+      color: var(--accent-purple);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .credibility-badge i {
+      font-size: 0.75rem;
+    }
+
+    .domain-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 1rem;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 2.5rem 0 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
     }
 
     .section-title {
-      color: var(--text-main);
-      font-size: 0.9rem;
-      letter-spacing: 0.16em;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-primary);
       text-transform: uppercase;
-      margin: 1.8rem 0 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Link Cards */
+    .links-grid {
       display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      opacity: 0.9;
+      flex-direction: column;
+      gap: 0.875rem;
     }
 
-    .section-title i {
-      color: var(--accent);
-      font-size: 0.9rem;
-    }
-
-    /* LINK CARDS (portfolio-style) */
     .link-card {
       background: var(--bg-card);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-soft);
-      padding: 0.9rem 1.1rem;
-      margin-bottom: 0.7rem;
+      padding: 1.25rem;
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 1rem;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--text-primary);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .link-card:nth-child(1) { animation-delay: 0.1s; }
+    .link-card:nth-child(2) { animation-delay: 0.2s; }
+    .link-card:nth-child(3) { animation-delay: 0.3s; }
+    .link-card:nth-child(4) { animation-delay: 0.4s; }
+    .link-card:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .link-card::before {
-      content: "";
+      content: '';
       position: absolute;
-      inset: -30%;
-      background: radial-gradient(circle at 0 0, rgba(0, 255, 136, 0.16), transparent 60%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(16, 185, 129, 0.05));
       opacity: 0;
-      transition: opacity 0.2s ease;
-      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
 
     .link-card:hover {
-      border-color: var(--accent-soft);
       transform: translateY(-3px);
-      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
-      background: radial-gradient(circle at top left, rgba(0, 255, 136, 0.04), transparent 65%),
-                  var(--bg-card);
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-xl);
     }
 
     .link-card:hover::before {
       opacity: 1;
     }
 
+    .link-card.premium {
+      border-left: 4px solid var(--accent-warning);
+    }
+
+    .link-card.obsidian {
+      border-left: 4px solid var(--accent-purple);
+    }
+
+    /* Community Card Colors */
+    .link-card.community.discord:hover {
+      border-color: var(--accent-discord);
+      box-shadow: var(--shadow-xl), 0 0 20px rgba(88, 101, 242, 0.2);
+    }
+
+    .link-card.community.telegram:hover {
+      border-color: var(--accent-telegram);
+      box-shadow: var(--shadow-xl), 0 0 20px rgba(0, 136, 204, 0.2);
+    }
+
+    .link-card.community.whatsapp:hover {
+      border-color: var(--accent-whatsapp);
+      box-shadow: var(--shadow-xl), 0 0 20px rgba(37, 211, 102, 0.2);
+    }
+
     .link-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent);
-      flex-shrink: 0;
-      font-size: 1.05rem;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .link-card.obsidian .link-icon {
+      background: linear-gradient(135deg, var(--accent-purple), #7c3aed);
+    }
+
+    .link-card.community.discord .link-icon {
+      background: linear-gradient(135deg, var(--accent-discord), #4752c4);
+    }
+
+    .link-card.community.telegram .link-icon {
+      background: linear-gradient(135deg, var(--accent-telegram), #0077b5);
+    }
+
+    .link-card.community.whatsapp .link-icon {
+      background: linear-gradient(135deg, var(--accent-whatsapp), #128c7e);
     }
 
     .link-content {
-      flex-grow: 1;
+      flex: 1;
       min-width: 0;
     }
 
     .link-title {
+      font-size: 1rem;
       font-weight: 500;
-      font-size: 0.95rem;
-      margin-bottom: 0.1rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      margin-bottom: 0.25rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .link-desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 0;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .discount-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
     }
 
     .link-arrow {
       color: var(--text-muted);
-      font-size: 0.8rem;
-      transition: transform 0.18s ease, color 0.18s ease;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
     }
 
     .link-card:hover .link-arrow {
-      transform: translateX(3px);
-      color: var(--accent);
+      transform: translateX(4px);
+      color: var(--accent-primary);
     }
 
-    /* SOCIAL ICONS */
+    .link-card.community.discord:hover .link-arrow {
+      color: var(--accent-discord);
+    }
+
+    .link-card.community.telegram:hover .link-arrow {
+      color: var(--accent-telegram);
+    }
+
+    .link-card.community.whatsapp:hover .link-arrow {
+      color: var(--accent-whatsapp);
+    }
+
+    /* Email Button */
+    .email-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin: 1.5rem auto;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .email-button:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* Social Links */
     .social-section {
-      padding: 1.6rem 0 0.8rem;
+      margin: 3rem 0;
       text-align: center;
     }
 
     .social-title {
       font-size: 0.8rem;
-      color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
       margin-bottom: 1rem;
+      font-weight: 500;
     }
 
-    .social-icons {
+    .social-grid {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      gap: 0.75rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 0.7s;
     }
 
-    .social-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.95);
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-main);
+      color: var(--text-secondary);
       font-size: 1rem;
       text-decoration: none;
-      transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+      transition: all 0.3s ease;
     }
 
-    .social-icon:hover {
-      border-color: var(--accent);
-      background: rgba(0, 0, 0, 0.9);
-      color: var(--accent);
+    .social-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+      color: var(--accent-primary);
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-md);
     }
 
-    /* FOOTER */
+    /* Footer */
     footer {
-      padding: 1.9rem 0 1.3rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(30, 64, 175, 0.4);
-      margin-top: 0.8rem;
       text-align: center;
-    }
-
-    .cyber-text {
-      color: var(--accent);
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    /* SIMPLE FADE-IN */
-    .fade-in {
+      padding: 2rem 0 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 2rem;
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 0.8s;
     }
 
-    @media (max-width: 576px) {
+    .footer-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .domain-link {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .domain-link:hover {
+      color: var(--accent-secondary);
+      text-decoration: underline;
+    }
+
+    .copyright {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+      margin-top: 0.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
       .container {
-        padding: 1.25rem 1rem 2.4rem;
+        padding: 1rem;
       }
-
-      .hero-name {
-        font-size: 1.35rem;
+      
+      .header {
+        min-height: 60vh;
+        padding-top: 1rem;
       }
-
-      .profile-img {
-        width: 100px;
-        height: 100px;
-        font-size: 2rem;
+      
+      h1 {
+        font-size: 1.5rem;
       }
-
+      
       .link-card {
-        padding: 0.85rem 0.95rem;
+        padding: 1rem;
+      }
+      
+      .link-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 1rem;
+      }
+      
+      .role-badge, .credibility-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .role-badges, .credibility-badges {
+        gap: 0.4rem;
+      }
+      
+      .role-badge, .credibility-badge {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.7rem;
+      }
+      
+      .section-header {
+        margin: 2rem 0 1rem;
+      }
+      
+      .section-title {
+        font-size: 1rem;
+      }
+      
+      .scroll-indicator {
+        bottom: 0.5rem;
       }
     }
   </style>
 </head>
 <body>
-<div id="particles-js"></div>
-
-<div class="container">
-  <!-- HEADER -->
-  <section class="header-section">
-    <div class="profile-container">
-      <div class="profile-img">
-        <i class="fas fa-shield-alt"></i>
+  <!-- Main Content -->
+  <div class="container">
+    
+    <!-- Header with Scroll Indicator -->
+    <header class="header">
+      <div class="profile-image">
+        <i class="fas fa-user-secret"></i>
       </div>
-      <div class="online-indicator"></div>
+      
+      <h1>ZISHAN AHAMED THANDAR</h1>
+      
+      <!-- Role Badges -->
+      <div class="role-badges">
+        <span class="role-badge">
+          <i class="fas fa-bug"></i> Red Teamer
+        </span>
+        <span class="role-badge">
+          <i class="fas fa-search-dollar"></i> Bug Hunter
+        </span>
+        <span class="role-badge">
+          <i class="fas fa-shield-alt"></i> Security Expert
+        </span>
+      </div>
+      
+      <!-- Credibility Badges (replacing the text paragraph) -->
+      <div class="credibility-badges">
+        <span class="credibility-badge badge-experience">
+          <i class="fas fa-calendar-check"></i> Breaking systems ethically since 2018
+        </span>
+        <span class="credibility-badge badge-trusted">
+          <i class="fas fa-shield-check"></i> Trusted by security teams worldwide
+        </span>
+        <span class="credibility-badge badge-premium">
+          <i class="fas fa-crown"></i> Premium resources for professional pentesters
+        </span>
+      </div>
+      
+      <div class="domain-badge">
+        <i class="fas fa-external-link-alt"></i>
+        zishanhack.com
+      </div>
+      
+      <!-- Scroll Down Indicator -->
+      <div class="scroll-indicator" onclick="scrollToContent()">
+        <div class="scroll-text">Scroll to explore</div>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </header>
+
+    <!-- Premium Resources -->
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-book"></i>
+      </div>
+      <h2 class="section-title">Premium Security Resources</h2>
+    </div>
+    
+    <div class="links-grid">
+      <!-- OSCP Obsidian Notes -->
+      <a href="https://zishanhack.com/books/oscp-obsidian-notes" target="_blank" rel="noopener noreferrer" class="link-card premium obsidian">
+        <div class="link-icon">
+          <i class="fas fa-bookmark"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">
+            OSCP Obsidian Notes
+            <span class="discount-badge">90% OFF</span>
+          </div>
+          <p class="link-desc">
+            Complete Obsidian vault with organized OSCP notes, methodologies, and exam prep
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
+
+      <!-- Bug Bounty Checklist -->
+      <a href="https://zishanhack.com/books/bug-bounty-checklist" target="_blank" rel="noopener noreferrer" class="link-card premium">
+        <div class="link-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">
+            Bug Bounty Web Security Checklist
+            <span class="discount-badge">90% OFF</span>
+          </div>
+          <p class="link-desc">
+            Comprehensive checklist for OWASP Top 10, business logic flaws, and advanced web vulnerabilities
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
+
+      <!-- OSWP Notes -->
+      <a href="https://zishanhack.com/books/oswp-notes" target="_blank" rel="noopener noreferrer" class="link-card premium">
+        <div class="link-icon">
+          <i class="fas fa-wifi"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">
+            OSWP Wireless Security Notes
+            <span class="discount-badge">90% OFF</span>
+          </div>
+          <p class="link-desc">
+            Complete wireless & Wi-Fi exploitation guide with lab setup and practical examples
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
+
+      <!-- CRTA Notes -->
+      <a href="https://zishanhack.com/books/crta-notes" target="_blank" rel="noopener noreferrer" class="link-card premium">
+        <div class="link-icon">
+          <i class="fas fa-user-secret"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">
+            CRTA Red Team Notes
+            <span class="discount-badge">90% OFF</span>
+          </div>
+          <p class="link-desc">
+            Advanced red teaming techniques, Active Directory attacks, and infrastructure penetration
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
     </div>
 
-    <h1 class="hero-name">ZISHAN AHAMED THANDAR</h1>
-    <p class="tagline">
-      Web &amp; API Penetration Tester · Offensive Security Expert · Bug Bounty Hunter<br>
-      Helping SaaS, startups &amp; enterprises find and fix real-world vulnerabilities before attackers do.
-    </p>
-
-    <div class="specialty-tags">
-      <span class="specialty-tag">Web &amp; API Pentesting</span>
-      <span class="specialty-tag">Active Directory &amp; Infrastructure</span>
-      <span class="specialty-tag">Bug Bounty &amp; CTF</span>
+    <!-- Professional Services -->
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-briefcase"></i>
+      </div>
+      <h2 class="section-title">Professional Services</h2>
     </div>
-  </section>
+    
+    <div class="links-grid">
+      <!-- Pentesting Services -->
+      <a href="mailto:advisory@zishanhack.com?subject=Pentesting%20Inquiry&body=Hi%20Zishan%2C%0A%0AI'm%20interested%20in%20discussing%20a%20security%20assessment%20for%3A" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Web & API Penetration Testing</div>
+          <p class="link-desc">
+            Professional security assessments for applications, APIs, and infrastructure
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-envelope"></i>
+        </div>
+      </a>
 
-  <section class="links-section">
-    <!-- 1. EBOOKS & STUDY RESOURCES -->
- <h2 class="section-title"><i class="fa-solid fa-book"></i> Ebooks &amp; Study Resources</h2>
+      <!-- Security Consulting -->
+      <a href="mailto:advisory@zishanhack.com?subject=Security%20Consulting&body=Hi%20Zishan%2C%0A%0AI'd%20like%20to%20discuss%20security%20consulting%20services%3A" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Security Architecture Review</div>
+          <p class="link-desc">
+            Expert review of your security architecture and strategic security planning
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-envelope"></i>
+        </div>
+      </a>
 
-<!-- 1. BUG BOUNTY WEB SECURITY CHECKLIST -->
-<a href="https://topmate.io/zishanadthandar/1523473" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-  <div class="link-icon">
-    <i class="fas fa-list-check"></i>
-  </div>
-  <div class="link-content">
+      <!-- Mentorship -->
+      <a href="mailto:advisory@zishanhack.com?subject=Mentorship%20Inquiry&body=Hi%20Zishan%2C%0A%0AI'm%20interested%20in%20your%20mentorship%20program%20for%3A" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-user-graduate"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">1:1 Security Mentorship</div>
+          <p class="link-desc">
+            Personalized coaching for bug bounty, red teaming, and career growth
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-envelope"></i>
+        </div>
+      </a>
 
-    <!-- Discount Badge -->
-    <div class="discount-badge">
-      90% OFF · Limited Time Offer
-    </div> 
-    <div class="discount-badge">
-      Best Seller
-    </div>
-
-    <div class="link-title">Bug Bounty Web Security Checklist</div>
-    <p class="link-desc">Practical checklist for real-world web bugs and manual testing.</p>
-  </div>
-  <div class="link-arrow">
-    <i class="fas fa-arrow-up-right-from-square"></i>
-  </div>
-</a>
-
-<!-- 2. OSWP NOTES -->
-<a href="https://topmate.io/zishanadthandar/1729436" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-  <div class="link-icon">
-    <i class="fas fa-wifi"></i>
-  </div>
-  <div class="link-content">
-
-    <!-- Discount Badge -->
-    <div class="discount-badge">
-      70% OFF · Limited Time Offer
-    </div>
-
-    <div class="link-title">OSWP Notes eBook</div>
-    <p class="link-desc">Wireless &amp; Wi-Fi exploitation notes distilled for exam and lab prep.</p>
-  </div>
-  <div class="link-arrow">
-    <i class="fas fa-arrow-up-right-from-square"></i>
-  </div>
-</a>
-
-<!-- 3. CRTA NOTES -->
-<a href="https://topmate.io/zishanadthandar/1734113" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-  <div class="link-icon">
-    <i class="fas fa-sticky-note"></i>
-  </div>
-  <div class="link-content">
-
-    <!-- Discount Badge -->
-    <div class="discount-badge">
-      90% OFF · Limited Time Offer
-    </div>    
-    <div class="discount-badge">
-      Trending
+      <!-- Email Button -->
+      <a href="mailto:advisory@zishanhack.com" class="email-button">
+        <i class="fas fa-paper-plane"></i>
+        advisory@zishanhack.com
+      </a>
     </div>
 
-    <div class="link-title">CRTA Red Team Notes</div>
-    <p class="link-desc">Focused CRTA red team notes from hands-on labs and practice.</p>
-  </div>
-  <div class="link-arrow">
-    <i class="fas fa-arrow-up-right-from-square"></i>
-  </div>
-</a>
+    <!-- Community & Support -->
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <h2 class="section-title">Community & Support</h2>
+    </div>
+    
+    <div class="links-grid">
+      <!-- Discord -->
+      <a href="https://discord.gg/T47v67eVT4" target="_blank" rel="noopener noreferrer" class="link-card community discord">
+        <div class="link-icon">
+          <i class="fab fa-discord"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Discord Server</div>
+          <p class="link-desc">
+            Connect with red teamers, bug bounty hunters, and cybersecurity learners
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
 
+      <!-- Telegram -->
+      <a href="https://t.me/BugCrowd" target="_blank" rel="noopener noreferrer" class="link-card community telegram">
+        <div class="link-icon">
+          <i class="fab fa-telegram"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Telegram Community</div>
+          <p class="link-desc">
+            Discussions around bug bounty, labs, and security updates
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
 
-    <!-- 2. HIRE ME / SERVICES -->
-    <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Hire Me · Services</h2>
+      <!-- WhatsApp -->
+      <a href="https://chat.whatsapp.com/GR2RD11phmy7mTWlGiALNE" target="_blank" rel="noopener noreferrer" class="link-card community whatsapp">
+        <div class="link-icon">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">WhatsApp Group</div>
+          <p class="link-desc">
+            Cybersecurity-focused community chat and discussions
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
+    </div>
 
-    <a href="https://www.upwork.com/freelancers/~01de193bc6218ab75d?s=1031626808452694016" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-shield-halved"></i>
+    <!-- Portfolio & Tools -->
+    <div class="section-header">
+      <div class="section-icon">
+        <i class="fas fa-toolbox"></i>
       </div>
-      <div class="link-content">
-        <div class="link-title">Book Web / API Penetration Test</div>
-        <p class="link-desc">Manual attacker-style testing for web apps, APIs &amp; infrastructure.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
+      <h2 class="section-title">Portfolio & Tools</h2>
+    </div>
+    
+    <div class="links-grid">
+      <!-- Portfolio -->
+      <a href="https://portfolio.zishanhack.com" target="_blank" rel="noopener noreferrer" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Professional Portfolio</div>
+          <p class="link-desc">
+            Complete profile with case studies, Hall of Fame mentions, and testimonials
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
 
-    <a href="https://topmate.io/zishanadthandar" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-user-graduate"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">1:1 Cybersecurity Mentorship</div>
-        <p class="link-desc">Personal roadmap for red teaming, bug bounty and practical pentesting.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
+      <!-- Resume -->
+      <a href="https://portfolio.zishanhack.com/CV.pdf" target="_blank" rel="noopener noreferrer" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-file-pdf"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Download Resume (PDF)</div>
+          <p class="link-desc">
+            6+ years in penetration testing, bug bounty programs, and offensive security
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
 
-    <a href="https://zishanadthandar.github.io/#contact" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-envelope-open-text"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Contact via Portfolio</div>
-        <p class="link-desc">Discuss an assessment, retainer or research-style engagement.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
+      <!-- Community Blog -->
+      <a href="https://blog.zishanhack.com" target="_blank" rel="noopener noreferrer" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-blog"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Security Blog & Writeups</div>
+          <p class="link-desc">
+            Technical articles, bug bounty writeups, and security research
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
+      </a>
+    </div>
 
-    <!-- 3. PORTFOLIO / CV / EXPERIENCE -->
-    <h2 class="section-title"><i class="fa-solid fa-id-card-clip"></i> Portfolio, CV &amp; Experience</h2>
-
-    <a href="https://zishanadthandar.github.io/" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-globe"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Full Portfolio Website</div>
-        <p class="link-desc">Services, tools, Hall of Fame mentions and testimonials.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="./CV.pdf" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-file-pdf"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Download Resume (PDF)</div>
-        <p class="link-desc">6+ years in penetration testing, bug bounty and offensive security.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://app.yogosha.com/r/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-flask"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Yogosha Strike Force Profile</div>
-        <p class="link-desc">Security researcher on private web, API and SaaS programs.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://hackerone.com/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-bug"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">HackerOne Profile</div>
-        <p class="link-desc">150+ valid vulnerabilities reported across 50+ programs.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://zishanadthandar.github.io/#hof" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-star"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Hall of Fame &amp; Recognitions</div>
-        <p class="link-desc">Google, Oracle, Zoho, Xiaomi, NCIIPC (Govt of India) and more.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://zishanadthandar.github.io/#certs" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-user-graduate"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Certifications &amp; Education</div>
-        <p class="link-desc">CRTA, C3SA, EHE, coding certifications and B.Tech (AUE).</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <!-- 4. PROJECTS & SECURITY TOOLS -->
-    <h2 class="section-title"><i class="fa-solid fa-wrench"></i> Projects &amp; Security Tools</h2>
-
-    <a href="https://github.com/ZishanAdThandar/WriteUps" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-folder-open"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Bug Bounty &amp; CTF WriteUps</div>
-        <p class="link-desc">HackTheBox, TryHackMe and real-world bug bounty walkthroughs.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://zishanadthandar.github.io/WriteUps/" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-flag"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Browse WriteUps Online</div>
-        <p class="link-desc">Readable CTF and bug bounty content directly in the browser.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://github.com/ZishanAdThandar/pentest" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-book-open"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Organized Pentester Guide</div>
-        <p class="link-desc">Curated tools, methodology, labs, jobs and learning paths.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://github.com/ZishanAdThandar/hackify" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-terminal"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Hackify (Bash Toolkit)</div>
-        <p class="link-desc">One-command setup of common pentesting tools and wordlists.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://github.com/ZishanAdThandar/WebsiteDorkerPro" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-magnifying-glass"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">WebsiteDorkerPro (GitHub)</div>
-        <p class="link-desc">Modern OSINT and recon tool for red teamers and bug bounty hunters.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://pypi.org/project/website-dorker-pro/" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
+    <!-- Security Tools & Extensions -->
+    <div class="section-header">
+      <div class="section-icon">
         <i class="fas fa-code"></i>
       </div>
-      <div class="link-content">
-        <div class="link-title">WebsiteDorkerPro (PyPI)</div>
-        <p class="link-desc">Install the OSINT tool via pip for your automation workflows.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://github.com/ZishanAdThandar/HackerProxyPro" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-puzzle-piece"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Hacker Proxy Pro (Source)</div>
-        <p class="link-desc">Firefox extension source for Burp Suite &amp; TOR proxy toggling.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://addons.mozilla.org/en-US/firefox/addon/hackerproxypro/" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-network-wired"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Install Hacker Proxy Pro</div>
-        <p class="link-desc">One-click Burp / TOR proxy toggle in Firefox.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://addons.mozilla.org/en-US/firefox/addon/zishanadthandar-cyberterminus/" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-palette"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">CyberTerminus Firefox Theme</div>
-        <p class="link-desc">Dark, neon-highlighted theme inspired by terminals and cyberpunk.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <!-- 5. COMMUNITY & SUPPORT -->
-    <h2 class="section-title"><i class="fa-solid fa-users"></i> Community &amp; Support</h2>
-
-    <a href="https://t.me/BugCrowd" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fab fa-telegram"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Telegram Community</div>
-        <p class="link-desc">Discussions around bug bounty, labs and security updates.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://discord.gg/T47v67eVT4" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fab fa-discord"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Discord Server</div>
-        <p class="link-desc">Connect with red teamers and cybersecurity learners.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://chat.whatsapp.com/GR2RD11phmy7mTWlGiALNE" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fab fa-whatsapp"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">WhatsApp Group</div>
-        <p class="link-desc">Cybersecurity-focused community chat.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-
-    <a href="https://github.com/sponsors/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="link-card fade-in">
-      <div class="link-icon">
-        <i class="fas fa-heart"></i>
-      </div>
-      <div class="link-content">
-        <div class="link-title">Support via GitHub Sponsors</div>
-        <p class="link-desc">Help sustain open-source security tools and research.</p>
-      </div>
-      <div class="link-arrow">
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </div>
-    </a>
-  </section>
-
-  <!-- SOCIAL ICONS -->
-  <section class="social-section">
-    <div class="social-title">Connect With Me</div>
-    <div class="social-icons">
-      <a href="https://github.com/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-github"></i>
+      <h2 class="section-title">Security Tools & Extensions</h2>
+    </div>
+    
+    <div class="links-grid">
+      <!-- WebsiteDorkerPro PyPI -->
+      <a href="https://pypi.org/project/website-dorker-pro/" target="_blank" rel="noopener noreferrer" class="link-card">
+        <div class="link-icon">
+          <i class="fab fa-python"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">WebsiteDorkerPro (PyPI)</div>
+          <p class="link-desc">
+            Install the OSINT tool via pip for your automation workflows
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
       </a>
-      <a href="https://linkedin.com/in/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-linkedin"></i>
+
+      <!-- Hackify -->
+      <a href="https://github.com/ZishanAdThandar/hackify" target="_blank" rel="noopener noreferrer" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-terminal"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Hackify (Bash Toolkit)</div>
+          <p class="link-desc">
+            One-command setup of common pentesting tools and wordlists
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
       </a>
-      <a href="https://twitter.com/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-twitter"></i>
+
+      <!-- Hacker Proxy Pro Firefox -->
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/hackerproxypro/" target="_blank" rel="noopener noreferrer" class="link-card">
+        <div class="link-icon">
+          <i class="fab fa-firefox"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">Hacker Proxy Pro (Firefox)</div>
+          <p class="link-desc">
+            One-click Burp / TOR proxy toggle extension for Firefox
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
       </a>
-      <a href="https://youtube.com/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://app.hackthebox.com/profile/4477" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fas fa-cube"></i>
-      </a>
-      <a href="https://tryhackme.com/p/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fas fa-cloud"></i>
-      </a>
-      <a href="https://scholar.google.com/citations?user=aFkf8jwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <i class="fas fa-graduation-cap"></i>
+
+      <!-- CyberTerminus Theme -->
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/zishanadthandar-cyberterminus/" target="_blank" rel="noopener noreferrer" class="link-card">
+        <div class="link-icon">
+          <i class="fas fa-palette"></i>
+        </div>
+        <div class="link-content">
+          <div class="link-title">CyberTerminus Firefox Theme</div>
+          <p class="link-desc">
+            Dark, neon-highlighted theme inspired by terminals and cyberpunk
+          </p>
+        </div>
+        <div class="link-arrow">
+          <i class="fas fa-arrow-up-right-from-square"></i>
+        </div>
       </a>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Zishan Ahamed Thandar</p>
-    <p class="cyber-text">CRAFTED FOR THE CYBER WORLD</p>
-  </footer>
-</div>
+    <!-- Social Links -->
+    <div class="social-section">
+      <div class="social-title">Connect With Me</div>
+      <div class="social-grid">
+        <a href="https://github.com/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://app.hackthebox.com/profile/4477" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fas fa-cube"></i>
+        </a>
+        <a href="https://tryhackme.com/p/ZishanAdThandar" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fas fa-terminal"></i>
+        </a>
+      </div>
+    </div>
 
-<!-- Optional: particles.js script if you want same animated background as portfolio -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const onScroll = () => {
-      fadeElements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 120) {
-          el.style.opacity = 1;
-          el.style.transform = 'translateY(0)';
+    <!-- Footer -->
+    <footer>
+      <p class="footer-text">
+        Professional Cybersecurity Services & Premium Resources at 
+        <a href="https://zishanhack.com" class="domain-link" target="_blank" rel="noopener noreferrer">zishanhack.com</a>
+      </p>
+      <p class="copyright">© 2024 Zishan Ahamed Thandar. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Scroll to content function
+      window.scrollToContent = function() {
+        const firstSection = document.querySelector('.section-header');
+        if (firstSection) {
+          firstSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+        }
+      };
+
+      // Scroll indicator visibility
+      const scrollIndicator = document.querySelector('.scroll-indicator');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          scrollIndicator.style.opacity = '0';
+          scrollIndicator.style.pointerEvents = 'none';
+        } else {
+          scrollIndicator.style.opacity = '1';
+          scrollIndicator.style.pointerEvents = 'auto';
         }
       });
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll);
-  });
-</script>
+
+      // Animate elements on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document.querySelectorAll('.link-card, .email-button, .social-grid, footer').forEach(element => {
+        observer.observe(element);
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 20,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
