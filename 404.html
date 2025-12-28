@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>404 - Resource Not Found | Zishan Hack</title>
+  <title>404 - Page Not Found | Zishan Hack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <meta name="description" content="404 Error - The requested security resource was not found. Return to Zishan's cybersecurity portfolio and resources.">
+  <meta name="description" content="404 Error - The requested page was not found. Return to Zishan's cybersecurity portfolio and resources.">
   <meta name="robots" content="noindex, nofollow">
   
   <!-- Fonts -->
@@ -64,62 +64,19 @@
     }
 
     .container {
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto;
       padding: 3rem 2rem;
       position: relative;
       z-index: 1;
     }
 
-    /* Terminal Effect */
-    .terminal-header {
-      background: #1a1a2e;
-      border-radius: 12px 12px 0 0;
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-bottom: 1px solid var(--border-light);
-      margin-bottom: 0;
-    }
-
-    .terminal-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-
-    .dot-red { background: #ef4444; }
-    .dot-yellow { background: #f59e0b; }
-    .dot-green { background: #10b981; }
-
-    .terminal-content {
-      background: rgba(30, 30, 46, 0.95);
-      border-radius: 0 0 12px 12px;
-      padding: 3rem 2rem;
-      border: 1px solid var(--border-light);
-      border-top: none;
-      box-shadow: var(--shadow-xl);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .terminal-content::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
-    }
-
     /* Error Code */
     .error-code {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 8rem;
+      font-size: 7rem;
       font-weight: 900;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       background: linear-gradient(135deg, var(--accent-danger), var(--accent-warning));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -131,7 +88,7 @@
     .error-subtitle {
       font-size: 1.8rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       color: var(--text-primary);
     }
 
@@ -143,56 +100,63 @@
       line-height: 1.7;
     }
 
-    /* ASCII Art */
-    .ascii-art {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--accent-primary);
-      margin: 2rem 0;
-      opacity: 0.7;
-      line-height: 1.2;
-      user-select: none;
+    /* Icon Animation */
+    .error-icon {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      color: var(--accent-danger);
+      position: relative;
+      display: inline-block;
     }
 
-    /* Command Prompt */
-    .command-prompt {
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      border-left: 4px solid var(--accent-danger);
-      text-align: left;
+    .error-icon::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      border-radius: 50%;
+      border: 2px solid rgba(239, 68, 68, 0.3);
+      animation: pulse 2s infinite;
     }
 
-    .prompt-line {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-      font-family: 'JetBrains Mono', monospace;
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 1;
+      }
+      70% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 1;
+      }
     }
 
-    .prompt-user {
-      color: var(--accent-secondary);
-      font-weight: 600;
+    /* Card Design */
+    .error-card {
+      background: rgba(30, 30, 46, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-light);
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    .prompt-path {
-      color: var(--accent-primary);
-    }
-
-    .prompt-symbol {
-      color: var(--text-secondary);
-    }
-
-    .prompt-command {
-      color: var(--text-primary);
-    }
-
-    .prompt-output {
-      color: var(--text-muted);
-      margin-left: 2.5rem;
-      font-style: italic;
+    .error-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-danger), var(--accent-warning), var(--accent-primary));
     }
 
     /* Action Buttons */
@@ -240,33 +204,6 @@
       transform: translateY(-3px);
     }
 
-    /* Security Scan Animation */
-    .scan-animation {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-      opacity: 0.3;
-    }
-
-    .scan-line {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
-      animation: scan 3s linear infinite;
-    }
-
-    @keyframes scan {
-      0% { top: 0%; }
-      100% { top: 100%; }
-    }
-
     /* Quick Links */
     .quick-links {
       margin-top: 3rem;
@@ -283,22 +220,22 @@
     }
 
     .quick-links-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
 
     .quick-link {
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1.2rem;
+      gap: 0.75rem;
+      padding: 1.5rem 1rem;
       background: rgba(255, 255, 255, 0.05);
       color: var(--text-secondary);
       text-decoration: none;
-      border-radius: var(--radius-full);
-      font-size: 0.9rem;
+      border-radius: var(--radius-lg);
       border: 1px solid var(--border-light);
       transition: all 0.3s ease;
     }
@@ -307,7 +244,17 @@
       background: rgba(59, 130, 246, 0.1);
       color: var(--accent-primary);
       border-color: var(--accent-primary);
-      transform: translateY(-2px);
+      transform: translateY(-5px);
+    }
+
+    .quick-link-icon {
+      font-size: 1.5rem;
+      color: var(--accent-primary);
+    }
+
+    .quick-link-text {
+      font-size: 0.9rem;
+      text-align: center;
     }
 
     /* Footer */
@@ -316,6 +263,7 @@
       padding-top: 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       width: 100%;
+      max-width: 600px;
     }
 
     .domain-link {
@@ -335,51 +283,67 @@
       margin-top: 1rem;
     }
 
-    /* Glitch Effect */
-    .glitch {
-      position: relative;
-      display: inline-block;
+    /* Search Box */
+    .search-box {
+      margin: 2rem auto;
+      max-width: 500px;
     }
 
-    .glitch::before,
-    .glitch::after {
-      content: '404';
+    .search-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 0.875rem 1.25rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .search-button {
+      padding: 0.875rem 1.5rem;
+      background: var(--accent-primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .search-button:hover {
+      background: var(--accent-secondary);
+      transform: translateY(-2px);
+    }
+
+    /* Scan Line Animation */
+    .scan-line {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      opacity: 0.8;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+      animation: scan 3s linear infinite;
+      pointer-events: none;
+      z-index: 1;
     }
 
-    .glitch::before {
-      animation: glitch-1 2s infinite linear alternate-reverse;
-      color: var(--accent-primary);
-      z-index: -1;
-    }
-
-    .glitch::after {
-      animation: glitch-2 3s infinite linear alternate-reverse;
-      color: var(--accent-secondary);
-      z-index: -2;
-    }
-
-    @keyframes glitch-1 {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
-      100% { transform: translate(0); }
-    }
-
-    @keyframes glitch-2 {
-      0% { transform: translate(0); }
-      20% { transform: translate(2px, -2px); }
-      40% { transform: translate(2px, 2px); }
-      60% { transform: translate(-2px, -2px); }
-      80% { transform: translate(-2px, 2px); }
-      100% { transform: translate(0); }
+    @keyframes scan {
+      0% { top: 0%; }
+      100% { top: 100%; }
     }
 
     /* Responsive */
@@ -389,11 +353,15 @@
       }
       
       .error-code {
-        font-size: 6rem;
+        font-size: 5rem;
       }
       
       .error-subtitle {
         font-size: 1.5rem;
+      }
+      
+      .error-card {
+        padding: 2rem 1.5rem;
       }
       
       .action-buttons {
@@ -408,7 +376,11 @@
       }
       
       .quick-links-grid {
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .search-form {
+        flex-direction: column;
       }
     }
 
@@ -425,87 +397,41 @@
         font-size: 1rem;
       }
       
-      .terminal-content {
-        padding: 2rem 1rem;
-      }
-    }
-
-    /* Print Styles */
-    @media print {
-      .scan-animation,
-      .terminal-header,
-      .quick-links,
-      .action-buttons {
-        display: none;
-      }
-      
-      .error-code {
-        -webkit-text-fill-color: black;
-        color: black;
+      .quick-links-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Scan Line Animation -->
+  <div class="scan-line"></div>
+
   <div class="container">
-    <!-- Terminal Header -->
-    <div class="terminal-header">
-      <div class="terminal-dot dot-red"></div>
-      <div class="terminal-dot dot-yellow"></div>
-      <div class="terminal-dot dot-green"></div>
-      <div style="margin-left: 1rem; color: var(--text-muted); font-size: 0.9rem; font-family: 'JetBrains Mono', monospace;">
-        terminal@go.zishanhack.com:~$
-      </div>
+    <!-- Error Icon -->
+    <div class="error-icon">
+      <i class="fas fa-exclamation-triangle"></i>
     </div>
 
-    <!-- Terminal Content -->
-    <div class="terminal-content">
-      <!-- Scan Animation -->
-      <div class="scan-animation">
-        <div class="scan-line"></div>
-      </div>
-
-      <!-- Error Code with Glitch Effect -->
-      <div class="error-code glitch">404</div>
-      
-      <h1 class="error-subtitle">SECURITY RESOURCE NOT FOUND</h1>
+    <!-- Error Card -->
+    <div class="error-card">
+      <div class="error-code">404</div>
+      <h1 class="error-subtitle">PAGE NOT FOUND</h1>
       
       <p class="error-message">
-        The requested cybersecurity resource, tool, or page could not be located. 
-        This might be due to an expired link, a moved resource, or an access attempt to a restricted area.
+        The cybersecurity resource or page you're looking for doesn't exist or has been moved. 
+        This could be due to an outdated link, a typo in the URL, or the resource being relocated.
       </p>
 
-      <!-- ASCII Art -->
-      <div class="ascii-art">
-        ╔══════════════════════════════════════════════════════════╗<br>
-        ║  █████╗ ██████╗  ██████╗███████╗██████╗ ████████╗███████╗  ║<br>
-        ║ ██╔══██╗██╔══██╗██╔════╝██╔════╝██╔══██╗╚══██╔══╝██╔════╝  ║<br>
-        ║ ███████║██████╔╝██║     █████╗  ██████╔╝   ██║   ███████╗  ║<br>
-        ║ ██╔══██║██╔══██╗██║     ██╔══╗  ██╔══██╗   ██║   ╚════██║  ║<br>
-        ║ ██║  ██║██║  ██║╚██████╗███████╗██║  ██║   ██║   ███████║  ║<br>
-        ║ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝  ║<br>
-        ╚══════════════════════════════════════════════════════════╝
-      </div>
-
-      <!-- Command Prompt -->
-      <div class="command-prompt">
-        <div class="prompt-line">
-          <span class="prompt-user">hacker@zishanhack</span>
-          <span class="prompt-symbol">:</span>
-          <span class="prompt-path">~/go</span>
-          <span class="prompt-symbol">$</span>
-          <span class="prompt-command">find / -name "requested_resource" 2>/dev/null</span>
-        </div>
-        <div class="prompt-output">find: 'requested_resource': No such file or directory</div>
-        
-        <div class="prompt-line" style="margin-top: 1.5rem;">
-          <span class="prompt-user">hacker@zishanhack</span>
-          <span class="prompt-symbol">:</span>
-          <span class="prompt-path">~/go</span>
-          <span class="prompt-symbol">$</span>
-          <span class="prompt-command">nmap -sV go.zishanhack.com</span>
-        </div>
-        <div class="prompt-output">PORT    STATE SERVICE  VERSION<br>80/tcp  open  http     nginx<br>443/tcp open  ssl/http nginx</div>
+      <!-- Search Box -->
+      <div class="search-box">
+        <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem;">
+          <i class="fas fa-search"></i> Search for resources:
+        </p>
+        <form class="search-form" id="searchForm">
+          <input type="text" class="search-input" placeholder="Search for OSCP, Bug Bounty, CRTA, OSWP..." id="searchInput">
+          <button type="submit" class="search-button">Search</button>
+        </form>
       </div>
 
       <!-- Action Buttons -->
@@ -523,144 +449,204 @@
           Report Issue
         </a>
       </div>
+    </div>
 
-      <!-- Quick Links -->
-      <div class="quick-links">
-        <div class="quick-links-title">Popular Resources</div>
-        <div class="quick-links-grid">
-          <a href="https://go.zishanhack.com" class="quick-link">
-            <i class="fas fa-link"></i> LinkTree
-          </a>
-          <a href="https://zishanhack.com" class="quick-link">
-            <i class="fas fa-shield-alt"></i> Main Site
-          </a>
-          <a href="/oscp-bundle" class="quick-link">
-            <i class="fas fa-book"></i> OSCP Bundle
-          </a>
-          <a href="/web-security-checklist" class="quick-link">
-            <i class="fas fa-clipboard-check"></i> Security Checklist
-          </a>
-          <a href="/crta" class="quick-link">
-            <i class="fas fa-user-secret"></i> CRTA Notes
-          </a>
-          <a href="/oswp-notes" class="quick-link">
-            <i class="fas fa-wifi"></i> OSWP Notes
-          </a>
-        </div>
+    <!-- Quick Links -->
+    <div class="quick-links">
+      <div class="quick-links-title">Popular Cybersecurity Resources</div>
+      <div class="quick-links-grid">
+        <a href="https://go.zishanhack.com" class="quick-link">
+          <div class="quick-link-icon">
+            <i class="fas fa-link"></i>
+          </div>
+          <div class="quick-link-text">LinkTree Home</div>
+        </a>
+        
+        <a href="/oscp-bundle" class="quick-link">
+          <div class="quick-link-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <div class="quick-link-text">OSCP Bundle</div>
+        </a>
+        
+        <a href="/web-security-checklist" class="quick-link">
+          <div class="quick-link-icon">
+            <i class="fas fa-clipboard-check"></i>
+          </div>
+          <div class="quick-link-text">Security Checklist</div>
+        </a>
+        
+        <a href="/crta" class="quick-link">
+          <div class="quick-link-icon">
+            <i class="fas fa-user-secret"></i>
+          </div>
+          <div class="quick-link-text">CRTA Notes</div>
+        </a>
+        
+        <a href="/oswp-notes" class="quick-link">
+          <div class="quick-link-icon">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <div class="quick-link-text">OSWP Notes</div>
+        </a>
+        
+        <a href="https://portfolio.zishanhack.com" class="quick-link">
+          <div class="quick-link-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <div class="quick-link-text">Portfolio</div>
+        </a>
       </div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
       <p>
-        Professional Cybersecurity Resources at 
+        Professional Cybersecurity Services at 
         <a href="https://go.zishanhack.com" class="domain-link">go.zishanhack.com</a>
       </p>
       <p class="copyright">
-        © 2026 Zishan Ahamed Thandar. This incident has been logged for security review.
+        © 2026 Zishan Ahamed Thandar. All rights reserved.
       </p>
     </div>
   </div>
 
   <script>
-    // Add interactive effects
-    document.addEventListener('DOMContentLoaded', function() {
-      // Randomize ASCII art characters periodically
-      const asciiArt = document.querySelector('.ascii-art');
-      const originalText = asciiArt.textContent;
+    // Search Form Handler
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
       
-      function randomizeAscii() {
-        const chars = ['╔', '╗', '╚', '╝', '║', '═', '█', '▓', '▒', '░'];
-        let newText = originalText;
-        
-        // Randomly replace some characters
-        for (let i = 0; i < 10; i++) {
-          const randomChar = chars[Math.floor(Math.random() * chars.length)];
-          const randomIndex = Math.floor(Math.random() * originalText.length);
-          newText = newText.substring(0, randomIndex) + randomChar + newText.substring(randomIndex + 1);
+      // Map search terms to URLs
+      const searchMap = {
+        'oscp': '/oscp-bundle',
+        'bug bounty': '/web-security-checklist',
+        'checklist': '/web-security-checklist',
+        'web security': '/web-security-checklist',
+        'crta': '/crta',
+        'red team': '/crta',
+        'oswp': '/oswp-notes',
+        'wireless': '/oswp-notes',
+        'wifi': '/oswp-notes',
+        'portfolio': 'https://portfolio.zishanhack.com',
+        'home': 'https://go.zishanhack.com',
+        'main': 'https://zishanhack.com',
+        'blog': 'https://blog.zishanhack.com',
+        'tools': 'https://go.zishanhack.com#tools'
+      };
+      
+      // Find matching URL
+      let redirectUrl = null;
+      for (const [key, url] of Object.entries(searchMap)) {
+        if (searchTerm.includes(key)) {
+          redirectUrl = url;
+          break;
         }
-        
-        asciiArt.textContent = newText;
-        
-        // Restore after a short delay
-        setTimeout(() => {
-          asciiArt.textContent = originalText;
-        }, 100);
       }
       
-      // Random glitch effect every few seconds
-      setInterval(() => {
-        if (Math.random() > 0.7) {
-          randomizeAscii();
-        }
-      }, 3000);
-      
-      // Add typing effect to command prompt
-      const commandLines = document.querySelectorAll('.prompt-command');
-      commandLines.forEach((line, index) => {
-        const text = line.textContent;
-        line.textContent = '';
+      // If no match found, show message
+      if (!redirectUrl) {
+        const input = document.getElementById('searchInput');
+        const originalValue = input.value;
+        input.value = 'No matches found. Try: OSCP, Bug Bounty, CRTA, OSWP';
+        input.style.color = '#ef4444';
         
         setTimeout(() => {
-          let i = 0;
-          const typeWriter = () => {
-            if (i < text.length) {
-              line.textContent += text.charAt(i);
-              i++;
-              setTimeout(typeWriter, 30);
-            }
-          };
-          typeWriter();
-        }, index * 500);
-      });
+          input.value = originalValue;
+          input.style.color = '';
+        }, 3000);
+        return;
+      }
       
-      // Add click effect to buttons
-      const buttons = document.querySelectorAll('.action-button, .quick-link');
-      buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
-          // Add ripple effect
-          const ripple = document.createElement('span');
-          const rect = this.getBoundingClientRect();
-          const size = Math.max(rect.width, rect.height);
-          const x = e.clientX - rect.left - size / 2;
-          const y = e.clientY - rect.top - size / 2;
-          
-          ripple.style.cssText = `
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${x}px;
-            top: ${y}px;
-            pointer-events: none;
-          `;
-          
-          this.style.position = 'relative';
-          this.style.overflow = 'hidden';
-          this.appendChild(ripple);
-          
-          // Remove ripple after animation
-          setTimeout(() => {
-            ripple.remove();
-          }, 600);
-        });
-      });
-      
-      // Add CSS for ripple animation
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes ripple {
-          to {
-            transform: scale(4);
-            opacity: 0;
-          }
-        }
-      `;
-      document.head.appendChild(style);
+      // Redirect to matched URL
+      window.location.href = redirectUrl;
     });
+    
+    // Add button click effects
+    const buttons = document.querySelectorAll('.action-button, .quick-link, .search-button');
+    buttons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        // Add ripple effect
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.cssText = `
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(0);
+          animation: ripple 0.6s linear;
+          width: ${size}px;
+          height: ${size}px;
+          left: ${x}px;
+          top: ${y}px;
+          pointer-events: none;
+        `;
+        
+        this.style.position = 'relative';
+        this.style.overflow = 'hidden';
+        this.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+    
+    // Add CSS for ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Add subtle typing effect to search placeholder
+    const searchInput = document.getElementById('searchInput');
+    const placeholders = [
+      'Search for OSCP, Bug Bounty, CRTA...',
+      'Search for penetration testing resources...',
+      'Search for cybersecurity notes...',
+      'Search for security tools...'
+    ];
+    
+    let placeholderIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    
+    function typePlaceholder() {
+      const currentPlaceholder = placeholders[placeholderIndex];
+      
+      if (isDeleting) {
+        searchInput.placeholder = currentPlaceholder.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        searchInput.placeholder = currentPlaceholder.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      if (!isDeleting && charIndex === currentPlaceholder.length) {
+        isDeleting = true;
+        setTimeout(typePlaceholder, 2000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        placeholderIndex = (placeholderIndex + 1) % placeholders.length;
+        setTimeout(typePlaceholder, 500);
+      } else {
+        setTimeout(typePlaceholder, isDeleting ? 50 : 100);
+      }
+    }
+    
+    // Start typing effect after page loads
+    setTimeout(typePlaceholder, 1000);
   </script>
 </body>
 </html>
