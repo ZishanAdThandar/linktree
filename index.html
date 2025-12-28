@@ -15,7 +15,7 @@
   <meta property="og:description" content="Premium security resources, pentesting tools, and professional security consulting">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://zishanhack.com/assets/og-image.jpg">
-  <meta property="og:url" content="https://zishanhack.com">
+  <meta property="og:url" content="https://go.zishanhack.com">
   
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
@@ -26,11 +26,15 @@
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
   
-  <!-- Fonts -->
+  <!-- Fonts with Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  </noscript>
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -81,6 +85,8 @@
       line-height: 1.6;
       min-height: 100vh;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* Background Gradient */
@@ -91,8 +97,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
       pointer-events: none;
       z-index: -1;
     }
@@ -132,6 +139,7 @@
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
+      transition: opacity 0.3s ease;
     }
 
     .scroll-text {
@@ -305,6 +313,7 @@
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.6s ease forwards;
+      min-height: 70px;
     }
 
     .link-card:nth-child(1) { animation-delay: 0.1s; }
@@ -567,6 +576,31 @@
       margin-top: 0.5rem;
     }
 
+    /* Print Styles */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .container {
+        max-width: 100%;
+        padding: 0.5in;
+      }
+      .link-card {
+        border: 1px solid #ccc !important;
+        break-inside: avoid;
+        color: black !important;
+      }
+      .social-section, .scroll-indicator {
+        display: none;
+      }
+      .email-button {
+        background: #333 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .container {
@@ -584,6 +618,7 @@
       
       .link-card {
         padding: 1rem;
+        min-height: 65px;
       }
       
       .link-icon {
@@ -620,6 +655,30 @@
       .scroll-indicator {
         bottom: 0.5rem;
       }
+      
+      .social-link {
+        width: 44px;
+        height: 44px;
+      }
+      
+      .link-card {
+        min-height: 60px;
+      }
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .link-card, .email-button, .social-grid, footer {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
     }
   </style>
 </head>
@@ -648,7 +707,7 @@
         </span>
       </div>
       
-      <!-- Credibility Badges (replacing the text paragraph) -->
+      <!-- Credibility Badges -->
       <div class="credibility-badges">
         <span class="credibility-badge badge-trusted">
           <i class="fas fa-shield-alt"></i> Trusted by Professionals
@@ -660,7 +719,7 @@
       
       <div class="domain-badge">
         <i class="fas fa-external-link-alt"></i>
-        zishanhack.com
+        go.zishanhack.com
       </div>
       
       <!-- Scroll Down Indicator -->
@@ -737,7 +796,7 @@
       </a>
 
       <!-- CRTA Notes -->
-      <a href="https://zishanhack.com target="_blank" rel="noopener noreferrer" class="link-card premium">
+      <a href="https://zishanhack.com" target="_blank" rel="noopener noreferrer" class="link-card premium">
         <div class="link-icon">
           <i class="fas fa-user-secret"></i>
         </div>
@@ -952,22 +1011,21 @@
       </a>
     </div>
 
-
     <!-- Community & Support -->
     <div class="social-section">
       <div class="social-title">Community & Support</div>
-    <div class="social-grid">
-      <a href="https://discord.gg/T47v67eVT4" target="_blank" rel="noopener noreferrer" class="social-link">
+      <div class="social-grid">
+        <a href="https://discord.gg/T47v67eVT4" target="_blank" rel="noopener noreferrer" class="social-link">
           <i class="fab fa-discord"></i>
-      </a>
-      <a href="https://t.me/BugCrowd" target="_blank" rel="noopener noreferrer" class="social-link">
+        </a>
+        <a href="https://t.me/BugCrowd" target="_blank" rel="noopener noreferrer" class="social-link">
           <i class="fab fa-telegram"></i>
-      </a>
-      <a href="https://chat.whatsapp.com/GR2RD11phmy7mTWlGiALNE" target="_blank" rel="noopener noreferrer" class="social-link">
+        </a>
+        <a href="https://chat.whatsapp.com/GR2RD11phmy7mTWlGiALNE" target="_blank" rel="noopener noreferrer" class="social-link">
           <i class="fab fa-whatsapp"></i>
-      </a>
+        </a>
+      </div>
     </div>
-
 
     <!-- Social Links -->
     <div class="social-section">
@@ -995,7 +1053,7 @@
     <footer>
       <p class="footer-text">
         Professional Cybersecurity Services & Premium Resources at 
-        <a href="https://zishanhack.com" class="domain-link" target="_blank" rel="noopener noreferrer">zishanhack.com</a>
+        <a href="https://go.zishanhack.com" class="domain-link" target="_blank" rel="noopener noreferrer">go.zishanhack.com</a>
       </p>
       <p class="copyright">© 2026 Zishan Ahamed Thandar. All rights reserved.</p>
     </footer>
@@ -1003,6 +1061,14 @@
 
   <!-- JavaScript -->
   <script>
+    // Google Analytics (Uncomment and add your ID)
+    /*
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YOURID');
+    */
+
     document.addEventListener('DOMContentLoaded', function() {
       // Scroll to content function
       window.scrollToContent = function() {
@@ -1017,15 +1083,17 @@
 
       // Scroll indicator visibility
       const scrollIndicator = document.querySelector('.scroll-indicator');
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-          scrollIndicator.style.opacity = '0';
-          scrollIndicator.style.pointerEvents = 'none';
-        } else {
-          scrollIndicator.style.opacity = '1';
-          scrollIndicator.style.pointerEvents = 'auto';
-        }
-      });
+      if (scrollIndicator) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 100) {
+            scrollIndicator.style.opacity = '0';
+            scrollIndicator.style.pointerEvents = 'none';
+          } else {
+            scrollIndicator.style.opacity = '1';
+            scrollIndicator.style.pointerEvents = 'auto';
+          }
+        });
+      }
 
       // Animate elements on scroll
       const observerOptions = {
@@ -1059,8 +1127,25 @@
           }
         });
       });
+
+      // Link click tracking (optional)
+      document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', function() {
+          console.log('External link clicked:', this.href);
+          // Add analytics tracking here
+        });
+      });
+
+      // Add loading class for CSS
+      document.body.classList.add('loaded');
     });
+
+    // Handle font loading
+    if ('fonts' in document) {
+      document.fonts.ready.then(() => {
+        document.body.classList.add('fonts-loaded');
+      });
+    }
   </script>
 </body>
 </html>
-
