@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 - Resource Not Found | Zishan Hack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="404 Error - The requested security resource was not found. Return to Zishan's cybersecurity portfolio and resources.">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111827;
+      --accent-primary: #3b82f6;
+      --accent-secondary: #10b981;
+      --accent-danger: #ef4444;
+      --accent-warning: #f59e0b;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #94a3af;
+      --border-light: #374151;
+      --shadow-xl: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(239, 68, 68, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
+        var(--bg-primary);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Terminal Effect */
+    .terminal-header {
+      background: #1a1a2e;
+      border-radius: 12px 12px 0 0;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 0;
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .terminal-content {
+      background: rgba(30, 30, 46, 0.95);
+      border-radius: 0 0 12px 12px;
+      padding: 3rem 2rem;
+      border: 1px solid var(--border-light);
+      border-top: none;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terminal-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+    }
+
+    /* Error Code */
+    .error-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent-danger), var(--accent-warning));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 50px rgba(239, 68, 68, 0.3);
+      line-height: 1;
+    }
+
+    .error-subtitle {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .error-message {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    /* ASCII Art */
+    .ascii-art {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent-primary);
+      margin: 2rem 0;
+      opacity: 0.7;
+      line-height: 1.2;
+      user-select: none;
+    }
+
+    /* Command Prompt */
+    .command-prompt {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-left: 4px solid var(--accent-danger);
+      text-align: left;
+    }
+
+    .prompt-line {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .prompt-user {
+      color: var(--accent-secondary);
+      font-weight: 600;
+    }
+
+    .prompt-path {
+      color: var(--accent-primary);
+    }
+
+    .prompt-symbol {
+      color: var(--text-secondary);
+    }
+
+    .prompt-command {
+      color: var(--text-primary);
+    }
+
+    .prompt-output {
+      color: var(--text-muted);
+      margin-left: 2.5rem;
+      font-style: italic;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 3rem 0 2rem;
+    }
+
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: white;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px -12px rgba(59, 130, 246, 0.4);
+      border-color: var(--accent-primary);
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      border: 2px solid var(--border-light);
+    }
+
+    .button-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent-secondary);
+      transform: translateY(-3px);
+    }
+
+    /* Security Scan Animation */
+    .scan-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .scan-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+      animation: scan 3s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { top: 0%; }
+      100% { top: 100%; }
+    }
+
+    /* Quick Links */
+    .quick-links {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .quick-links-title {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .quick-links-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .quick-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+    }
+
+    .quick-link:hover {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--accent-primary);
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+
+    .domain-link {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .domain-link:hover {
+      color: var(--accent-secondary);
+      text-decoration: underline;
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    /* Glitch Effect */
+    .glitch {
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: '404';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+    }
+
+    .glitch::before {
+      animation: glitch-1 2s infinite linear alternate-reverse;
+      color: var(--accent-primary);
+      z-index: -1;
+    }
+
+    .glitch::after {
+      animation: glitch-2 3s infinite linear alternate-reverse;
+      color: var(--accent-secondary);
+      z-index: -2;
+    }
+
+    @keyframes glitch-1 {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    @keyframes glitch-2 {
+      0% { transform: translate(0); }
+      20% { transform: translate(2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-2px, -2px); }
+      80% { transform: translate(-2px, 2px); }
+      100% { transform: translate(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1rem;
+      }
+      
+      .error-code {
+        font-size: 6rem;
+      }
+      
+      .error-subtitle {
+        font-size: 1.5rem;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .action-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+      
+      .quick-links-grid {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .error-code {
+        font-size: 4rem;
+      }
+      
+      .error-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .error-message {
+        font-size: 1rem;
+      }
+      
+      .terminal-content {
+        padding: 2rem 1rem;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .scan-animation,
+      .terminal-header,
+      .quick-links,
+      .action-buttons {
+        display: none;
+      }
+      
+      .error-code {
+        -webkit-text-fill-color: black;
+        color: black;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Terminal Header -->
+    <div class="terminal-header">
+      <div class="terminal-dot dot-red"></div>
+      <div class="terminal-dot dot-yellow"></div>
+      <div class="terminal-dot dot-green"></div>
+      <div style="margin-left: 1rem; color: var(--text-muted); font-size: 0.9rem; font-family: 'JetBrains Mono', monospace;">
+        terminal@go.zishanhack.com:~$
+      </div>
+    </div>
+
+    <!-- Terminal Content -->
+    <div class="terminal-content">
+      <!-- Scan Animation -->
+      <div class="scan-animation">
+        <div class="scan-line"></div>
+      </div>
+
+      <!-- Error Code with Glitch Effect -->
+      <div class="error-code glitch">404</div>
+      
+      <h1 class="error-subtitle">SECURITY RESOURCE NOT FOUND</h1>
+      
+      <p class="error-message">
+        The requested cybersecurity resource, tool, or page could not be located. 
+        This might be due to an expired link, a moved resource, or an access attempt to a restricted area.
+      </p>
+
+      <!-- ASCII Art -->
+      <div class="ascii-art">
+        ╔══════════════════════════════════════════════════════════╗<br>
+        ║  █████╗ ██████╗  ██████╗███████╗██████╗ ████████╗███████╗  ║<br>
+        ║ ██╔══██╗██╔══██╗██╔════╝██╔════╝██╔══██╗╚══██╔══╝██╔════╝  ║<br>
+        ║ ███████║██████╔╝██║     █████╗  ██████╔╝   ██║   ███████╗  ║<br>
+        ║ ██╔══██║██╔══██╗██║     ██╔══╗  ██╔══██╗   ██║   ╚════██║  ║<br>
+        ║ ██║  ██║██║  ██║╚██████╗███████╗██║  ██║   ██║   ███████║  ║<br>
+        ║ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝  ║<br>
+        ╚══════════════════════════════════════════════════════════╝
+      </div>
+
+      <!-- Command Prompt -->
+      <div class="command-prompt">
+        <div class="prompt-line">
+          <span class="prompt-user">hacker@zishanhack</span>
+          <span class="prompt-symbol">:</span>
+          <span class="prompt-path">~/go</span>
+          <span class="prompt-symbol">$</span>
+          <span class="prompt-command">find / -name "requested_resource" 2>/dev/null</span>
+        </div>
+        <div class="prompt-output">find: 'requested_resource': No such file or directory</div>
+        
+        <div class="prompt-line" style="margin-top: 1.5rem;">
+          <span class="prompt-user">hacker@zishanhack</span>
+          <span class="prompt-symbol">:</span>
+          <span class="prompt-path">~/go</span>
+          <span class="prompt-symbol">$</span>
+          <span class="prompt-command">nmap -sV go.zishanhack.com</span>
+        </div>
+        <div class="prompt-output">PORT    STATE SERVICE  VERSION<br>80/tcp  open  http     nginx<br>443/tcp open  ssl/http nginx</div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <a href="https://go.zishanhack.com" class="action-button button-primary">
+          <i class="fas fa-home"></i>
+          Return to Home
+        </a>
+        <a href="https://zishanhack.com" class="action-button button-secondary">
+          <i class="fas fa-external-link-alt"></i>
+          Visit Main Site
+        </a>
+        <a href="mailto:advisory@zishanhack.com" class="action-button button-secondary">
+          <i class="fas fa-envelope"></i>
+          Report Issue
+        </a>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="quick-links">
+        <div class="quick-links-title">Popular Resources</div>
+        <div class="quick-links-grid">
+          <a href="https://go.zishanhack.com" class="quick-link">
+            <i class="fas fa-link"></i> LinkTree
+          </a>
+          <a href="https://zishanhack.com" class="quick-link">
+            <i class="fas fa-shield-alt"></i> Main Site
+          </a>
+          <a href="/oscp-bundle" class="quick-link">
+            <i class="fas fa-book"></i> OSCP Bundle
+          </a>
+          <a href="/web-security-checklist" class="quick-link">
+            <i class="fas fa-clipboard-check"></i> Security Checklist
+          </a>
+          <a href="/crta" class="quick-link">
+            <i class="fas fa-user-secret"></i> CRTA Notes
+          </a>
+          <a href="/oswp-notes" class="quick-link">
+            <i class="fas fa-wifi"></i> OSWP Notes
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        Professional Cybersecurity Resources at 
+        <a href="https://go.zishanhack.com" class="domain-link">go.zishanhack.com</a>
+      </p>
+      <p class="copyright">
+        © 2024 Zishan Ahamed Thandar. This incident has been logged for security review.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Add interactive effects
+    document.addEventListener('DOMContentLoaded', function() {
+      // Randomize ASCII art characters periodically
+      const asciiArt = document.querySelector('.ascii-art');
+      const originalText = asciiArt.textContent;
+      
+      function randomizeAscii() {
+        const chars = ['╔', '╗', '╚', '╝', '║', '═', '█', '▓', '▒', '░'];
+        let newText = originalText;
+        
+        // Randomly replace some characters
+        for (let i = 0; i < 10; i++) {
+          const randomChar = chars[Math.floor(Math.random() * chars.length)];
+          const randomIndex = Math.floor(Math.random() * originalText.length);
+          newText = newText.substring(0, randomIndex) + randomChar + newText.substring(randomIndex + 1);
+        }
+        
+        asciiArt.textContent = newText;
+        
+        // Restore after a short delay
+        setTimeout(() => {
+          asciiArt.textContent = originalText;
+        }, 100);
+      }
+      
+      // Random glitch effect every few seconds
+      setInterval(() => {
+        if (Math.random() > 0.7) {
+          randomizeAscii();
+        }
+      }, 3000);
+      
+      // Add typing effect to command prompt
+      const commandLines = document.querySelectorAll('.prompt-command');
+      commandLines.forEach((line, index) => {
+        const text = line.textContent;
+        line.textContent = '';
+        
+        setTimeout(() => {
+          let i = 0;
+          const typeWriter = () => {
+            if (i < text.length) {
+              line.textContent += text.charAt(i);
+              i++;
+              setTimeout(typeWriter, 30);
+            }
+          };
+          typeWriter();
+        }, index * 500);
+      });
+      
+      // Add click effect to buttons
+      const buttons = document.querySelectorAll('.action-button, .quick-link');
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          // Add ripple effect
+          const ripple = document.createElement('span');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          
+          ripple.style.cssText = `
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
+            pointer-events: none;
+          `;
+          
+          this.style.position = 'relative';
+          this.style.overflow = 'hidden';
+          this.appendChild(ripple);
+          
+          // Remove ripple after animation
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      });
+      
+      // Add CSS for ripple animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes ripple {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+</html>
