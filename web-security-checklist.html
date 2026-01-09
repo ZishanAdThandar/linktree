@@ -164,6 +164,27 @@
       margin: 0 auto 2rem;
     }
 
+    /* Disclaimer Box */
+    .disclaimer-box {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .disclaimer-box p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .disclaimer-box strong {
+      color: var(--accent-warning);
+    }
+
     /* Price Section */
     .price-section {
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
@@ -497,6 +518,18 @@
       line-height: 1.6;
     }
 
+    .product-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 1rem auto;
+      line-height: 1.5;
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-lg);
+    }
+
     .copyright {
       font-size: 0.8rem;
       color: var(--text-muted);
@@ -592,8 +625,13 @@
       </div>
       
       <h1>Ultimate Web Security Checklist</h1>
-      <p class="subtitle">Professional guide for bug hunters, pentesters, and cybersecurity professionals to uncover vulnerabilities and master penetration testing</p>
+      <p class="subtitle">Professional checklist for bug hunters, pentesters, and cybersecurity professionals to systematically uncover vulnerabilities and standardize penetration testing</p>
       
+      <!-- Disclaimer -->
+      <div class="disclaimer-box">
+        <p><strong>Note:</strong> This is a professional security checklist and reference guide. It assumes foundational knowledge of web application security concepts and tools. Perfect for standardizing and accelerating your testing workflow.</p>
+      </div>
+
       <!-- Price Section -->
       <div class="price-section">
         <div class="price-container">
@@ -616,7 +654,7 @@
       </div>
 
       <!-- Primary CTA -->
-      <a href="https://zishanhack.com" class="cta-button" onclick="trackPurchase('web_security_checklist')">
+      <a href="https://zishanhack.com/checkout/web-security-checklist" class="cta-button" onclick="trackPurchase('web_security_checklist')">
         <i class="fas fa-lock"></i>
         Get Instant Access Now - $25
       </a>
@@ -626,20 +664,20 @@
     <div class="value-proposition">
       <div class="value-item">
         <div class="value-icon">🔒</div>
-        <h3>Uncover Vulnerabilities</h3>
-        <p>Detect SQLi, XSS, SSRF, and cloud misconfigurations</p>
+        <h3>Never Miss a Test</h3>
+        <p>Systematically detect SQLi, XSS, SSRF, and cloud misconfigurations</p>
       </div>
       
       <div class="value-item">
         <div class="value-icon">📚</div>
-        <h3>Master Expert Techniques</h3>
-        <p>Learn recon, exploitation, and advanced testing methods</p>
+        <h3>Structured Workflow</h3>
+        <p>Follow professional recon, exploitation, and testing methodologies</p>
       </div>
       
       <div class="value-item">
         <div class="value-icon">🌐</div>
         <h3>Stay Ahead of Threats</h3>
-        <p>Tackle GraphQL injection, prototype pollution, and API flaws</p>
+        <p>Cover GraphQL injection, prototype pollution, and modern API flaws</p>
       </div>
       
       <div class="value-item">
@@ -651,7 +689,7 @@
 
     <!-- Features -->
     <div class="features-section">
-      <h2 class="section-title">What You'll Gain</h2>
+      <h2 class="section-title">What You'll Get</h2>
       
       <div class="features-grid">
         <div class="feature-card">
@@ -666,7 +704,7 @@
             <li>Business logic flaws</li>
             <li>API security testing</li>
             <li>Cloud environment security</li>
-            <li>Web framework vulnerabilities</li>
+            <li>Vulnerability patterns for modern frameworks</li>
           </ul>
         </div>
         
@@ -675,14 +713,14 @@
             <div class="feature-icon">
               <i class="fas fa-tools"></i>
             </div>
-            <h3>Tool Mastery</h3>
+            <h3>Tool Integration</h3>
           </div>
           <ul class="feature-list">
             <li>Burp Suite professional workflows</li>
             <li>sqlmap automation techniques</li>
             <li>Nuclei template usage</li>
-            <li>Custom script development</li>
             <li>Automation best practices</li>
+            <li>Custom script integration guidance</li>
           </ul>
         </div>
         
@@ -707,12 +745,12 @@
             <div class="feature-icon">
               <i class="fas fa-chart-bar"></i>
             </div>
-            <h3>Structured Methodology</h3>
+            <h3>Professional Methodology</h3>
           </div>
           <ul class="feature-list">
             <li>Step-by-step testing procedures</li>
             <li>Checklists for each vulnerability type</li>
-            <li>Reporting templates</li>
+            <li>Reporting structure guidance</li>
             <li>Time management strategies</li>
             <li>Bug bounty submission guidelines</li>
           </ul>
@@ -722,9 +760,9 @@
 
     <!-- Tools Coverage -->
     <div class="tools-section">
-      <h2 class="section-title">Tools You'll Master</h2>
+      <h2 class="section-title">Tools Covered</h2>
       <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
-        Professional tool coverage with practical implementation examples
+        Professional tool integration with practical testing examples
       </p>
       
       <div class="tools-grid">
@@ -797,9 +835,9 @@
 
     <!-- Final CTA -->
     <div class="price-section" style="margin-top: 4rem;">
-      <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: white;">Ready to Level Up Your Security Skills?</h2>
+      <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: white;">Ready to Standardize Your Security Testing?</h2>
       <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem;">
-        Join hundreds of cybersecurity professionals using this checklist to find critical vulnerabilities and earn bug bounties.
+        Join hundreds of cybersecurity professionals using this checklist to systematically find critical vulnerabilities and earn bug bounties.
       </p>
       
       <div class="price-container">
@@ -813,10 +851,14 @@
         <div id="final-countdown">24:00:00</div>
       </div>
       
-      <a href="https://zishanhack.com" class="cta-button" onclick="trackPurchase('web_security_checklist_final')">
+      <a href="https://zishanhack.com/checkout/web-security-checklist" class="cta-button" onclick="trackPurchase('web_security_checklist_final')">
         <i class="fas fa-rocket"></i>
         Get Checklist Now - Only $25
       </a>
+      
+      <div class="product-note">
+        <p><i class="fas fa-info-circle"></i> <strong>What You're Getting:</strong> A comprehensive 32-page PDF checklist covering 12+ vulnerability categories with specific tool-based testing steps. Instant digital delivery after purchase.</p>
+      </div>
       
       <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1.5rem;">
         <i class="fas fa-lock"></i> Secure payment · Instant digital delivery · 30-day guarantee
@@ -827,7 +869,10 @@
     <footer>
       <p class="footer-note">
         <strong>Perfect for:</strong> Bug bounty hunters, penetration testers, security engineers, CTF players, 
-        cybersecurity students, and anyone looking to improve their web application security skills.
+        cybersecurity professionals looking to standardize and accelerate their web application security testing.
+      </p>
+      <p class="product-note">
+        <strong>Note:</strong> This product is a professional reference checklist designed for those with foundational security knowledge. It structures your testing workflow but does not teach basic concepts from scratch.
       </p>
       <p class="copyright">
         © 2026 Zishan Ahamed Thandar. All rights reserved.<br>
